@@ -564,8 +564,6 @@ BG_CYAN = "\033[46m"
 def get_quality_color(quality: int) -> str:
     if quality >= 80:
         return GREEN
-    if quality >= 60:
-        return YELLOW
     if quality >= 40:
         return YELLOW
     return RED
@@ -753,7 +751,7 @@ def render_dashboard(
         f"{RESET}"
     )
 
-    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d %H:%M:%S")
     output_lines.append(
         f" {DIM}Updated: {now}  │  Refresh #{refresh_count}  │  Interval: {interval}s  │  Ctrl+C to exit{RESET}"
     )

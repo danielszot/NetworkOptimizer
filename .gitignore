@@ -60,3 +60,4 @@ TestResults/
 
 # Backup
 backup/
+scripts/__pycache__/
