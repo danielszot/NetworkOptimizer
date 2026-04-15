@@ -551,8 +551,6 @@ BG_CYAN = "\033[46m"
 def get_quality_color(quality: int) -> str:
     if quality >= 80:
         return GREEN
-    if quality >= 60:
-        return YELLOW
     if quality >= 40:
         return YELLOW
     return RED
